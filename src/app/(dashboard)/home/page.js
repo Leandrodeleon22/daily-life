@@ -4,7 +4,12 @@ import React from "react";
 import homeImage from "../../../../public/home-image.png";
 
 const page = () => {
-  const scriptures = ["Mt 23:23"];
+  const scriptures = [
+    {
+      id: 1,
+      name: "Mt 23:23",
+    },
+  ];
   return (
     <>
       <div className="bg-[url('/home-image.png')] min-h-[50.5rem] text-white flex justify-center items-center">
@@ -15,7 +20,9 @@ const page = () => {
           </p>
           {scriptures.map((scripture) => {
             return (
-              <p className="text-center italic text-[3rem]">{scripture}</p>
+              <p key={scripture.id} className="text-center italic text-[3rem]">
+                {scripture.name}
+              </p>
             );
           })}
         </div>
