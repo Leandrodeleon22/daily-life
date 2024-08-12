@@ -1,7 +1,7 @@
 import Wrapper from "@/components/Wrapper";
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
-import homeImage from "../../../../public/home-image.png";
+// import homeImage from "../../../../public/home-image.png";
 
 const page = () => {
   const scriptures = [
@@ -12,7 +12,7 @@ const page = () => {
   ];
   return (
     <>
-      <div className="bg-[url('/home-image.png')] min-h-[50.5rem] text-white flex justify-center items-center">
+      <div className="bg-[url('https://res.cloudinary.com/da8jnpdza/image/upload/v1723424536/home-image_iqf8bu.png')] min-h-[50.5rem] text-white flex justify-center items-center">
         <div className="max-w-[80rem]  ">
           <h1 className="font-bold text-[7.5rem]">Sunday Message Title</h1>
           <p className="text-[4.5rem] text-center">
