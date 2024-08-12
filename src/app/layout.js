@@ -1,6 +1,7 @@
 import { Inter, Istok_Web } from "next/font/google";
 import "./globals.css";
-
+import Nav from "@/components/Nav";
+import { headers } from "next/headers";
 // const inter = Inter({ subsets: ["latin"] });
 
 const istok_web = Istok_Web({

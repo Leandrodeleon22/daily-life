@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --main-color: #07371a;
+}
+
 html {
   font-size: 62.5%;
 }
