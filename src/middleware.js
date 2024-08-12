@@ -1,0 +1,22 @@
+export function middleware(request) {
+  console.log("fire");
+  const currentUser = request.cookies.get("user")?.value;
+  console.log(currentUser);
+  // if (currentUser && !request.nextUrl.pathname.startsWith('/dashboard')) {
+  //   return Response.redirect(new URL('/dashboard', request.url))
+  // }
+  // console.log(request.url);
+  if (!currentUser) {
+    return Response.redirect(new URL("/", request.url));
+  }
+}
+
+export const config = {
+  matcher: [
+    "/home/:path",
+    "/messages/:path",
+    "/proverbs/:path",
+    "/providence-events/:path",
+    "/providence-quiz/:path",
+  ],
+};

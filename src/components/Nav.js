@@ -1,3 +1,4 @@
+import { deleteCookies } from "@/utils/actions";
 import Link from "next/link";
 
 import React from "react";
@@ -33,6 +34,11 @@ const Nav = () => {
 
   return (
     <nav className=" bg-slate-50 w-full shadow-sm py-5">
+      <form action={deleteCookies} className=" bg flex justify-end">
+        <button type="submit" className="pr-10 text-[1.5rem] text-green-700">
+          Signout
+        </button>
+      </form>
       <div className=" w-4/5 mx-auto flex justify-between text-[2rem] text-[var(--main-color)]  ">
         {links.map((link) => {
           return (
