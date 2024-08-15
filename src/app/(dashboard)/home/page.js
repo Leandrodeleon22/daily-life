@@ -1,3 +1,5 @@
+import PrayerCondition from "@/components/PrayerCondition";
+import Quiz from "@/components/Quiz";
 import Wrapper from "@/components/Wrapper";
 // import Image from "next/image";
 import React from "react";
@@ -27,8 +29,11 @@ const page = () => {
           })}
         </div>
       </div>
-      {/* <Image src={homeImage} alt="home-image" className="w-full"/> */}
-      <Wrapper>home</Wrapper>
+
+      <Wrapper>
+        <PrayerCondition />
+        <Quiz />
+      </Wrapper>
     </>
   );
 };

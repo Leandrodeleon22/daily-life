@@ -36,7 +36,7 @@ const Nav = () => {
     <nav className=" bg-slate-50 w-full shadow-sm py-5">
       <form action={deleteCookies} className=" bg flex justify-end">
         <button type="submit" className="pr-10 text-[1.5rem] text-green-700">
-          Signout
+          Sign out
         </button>
       </form>
       <div className=" w-4/5 mx-auto flex justify-between text-[2rem] text-[var(--main-color)]  ">
