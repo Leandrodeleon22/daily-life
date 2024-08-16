@@ -1,7 +1,7 @@
 import React from "react";
 
 const page = () => {
-  return <div>monday</div>;
+  return <div>thursday</div>;
 };
 
 export default page;
