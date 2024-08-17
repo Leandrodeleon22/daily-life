@@ -1,5 +1,8 @@
+"use client";
+
 import { deleteCookies } from "@/utils/actions";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import React from "react";
 
@@ -32,17 +35,30 @@ const Nav = () => {
     },
   ];
 
+  const pathname = usePathname();
+
   return (
     <nav className=" bg-slate-50 w-full shadow-sm py-5">
       <form action={deleteCookies} className=" bg flex justify-end">
-        <button type="submit" className="pr-10 text-[1.5rem] text-green-700">
+        <button
+          type="submit"
+          className="hover:text-green-500 pr-10 text-[1.5rem] text-green-700"
+        >
           Sign out
         </button>
       </form>
       <div className=" w-4/5 mx-auto flex justify-between text-[2rem] text-[var(--main-color)]  ">
         {links.map((link) => {
           return (
-            <Link className="w-[18rem]" key={link.id} href={link.href}>
+            <Link
+              className={`hover:text-green-500 px-4  ${
+                pathname === link.href || pathname.includes(link.href)
+                  ? "activeLink hover:text-white"
+                  : ""
+              } `}
+              key={link.id}
+              href={link.href}
+            >
               {link.name}
             </Link>
           );

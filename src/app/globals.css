@@ -10,3 +10,9 @@
 html {
   font-size: 62.5%;
 }
+
+.activeLink {
+  background-color: #07371a;
+  color: white;
+  border-radius: 5px;
+}

@@ -1,5 +1,8 @@
+"use client";
+
 import Wrapper from "@/components/Wrapper";
 import React from "react";
+import axios from "axios";
 
 const page = () => {
   const messages = [
@@ -9,7 +12,7 @@ const page = () => {
       date: "August 4, 2024",
       title: "God the Holy Spirit and the Lord All Appear when you Testify.",
       scriptures: ["Mt: 23:23"],
-      link: "",
+      file: "sm.pdf",
     },
     {
       id: 2,
@@ -17,10 +20,34 @@ const page = () => {
       date: "August 7, 2024",
       title: "God the Holy Spirit and the Lord All Appear when you Testify.",
       scriptures: ["Mt: 24:23", "Mt: 25:23"],
-      link: "",
+      file: "wm.pdf",
     },
   ];
+  const handleDownload = async (file) => {
+    try {
+      const response = await axios.get(`/api/download?message=${file}`, {
+        responseType: "blob",
+      });
 
+      console.log("RESPONSE", response);
+      // Extract filename from content-disposition header
+      const contentDisposition = response.headers["content-disposition"];
+      const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
+      const fileName = fileNameMatch ? fileNameMatch[1] : "downloadedFile";
+
+      // Create a temporary anchor element to trigger the download
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      // Setting filename received in response
+      link.setAttribute("download", fileName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Wrapper>
       <section className="mt-28">
@@ -40,7 +67,10 @@ const page = () => {
                   {scripture}
                 </p>
               ))}
-              <button className=" min-w-[20.75rem] bg-[var(--main-color)] text-white text-[4rem] font-bold px-14 my-12">
+              <button
+                className=" min-w-[20.75rem] bg-[var(--main-color)] text-white text-[4rem] font-bold px-14 my-12"
+                onClick={() => handleDownload(message.file)}
+              >
                 Download
               </button>
 

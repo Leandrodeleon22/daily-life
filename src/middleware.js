@@ -1,7 +1,6 @@
 export function middleware(request) {
-  console.log("fire");
   const currentUser = request.cookies.get("user")?.value;
-  console.log(currentUser);
+
   // if (currentUser && !request.nextUrl.pathname.startsWith('/dashboard')) {
   //   return Response.redirect(new URL('/dashboard', request.url))
   // }
