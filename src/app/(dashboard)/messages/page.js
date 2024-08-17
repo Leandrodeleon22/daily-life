@@ -29,7 +29,6 @@ const page = () => {
         responseType: "blob",
       });
 
-      console.log("RESPONSE", response);
       // Extract filename from content-disposition header
       const contentDisposition = response.headers["content-disposition"];
       const fileNameMatch = contentDisposition.match(/filename="(.+)"/);

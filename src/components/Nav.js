@@ -38,7 +38,7 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className=" bg-slate-50 w-full shadow-sm py-5">
+    <nav className=" bg-slate-50 w-full shadow-sm py-5 max-[832px]:hidden">
       <form action={deleteCookies} className=" bg flex justify-end">
         <button
           type="submit"

@@ -21,7 +21,7 @@ const PrayerCondition = () => {
 
   return (
     <section className="flex items-center flex-col text-[var(--main-color)] ">
-      <h1 className="text-[7rem] font-bold my-[3rem]">
+      <h1 className="text-[7rem] font-bold my-[3rem] text-center">
         75-Day Prayer Condition
       </h1>
       <ol className="text-[2rem]">
