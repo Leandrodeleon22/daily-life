@@ -48,7 +48,7 @@ const MobileNav = () => {
             Sign out
           </button>
         </form>
-        <RxHamburgerMenu className="text-[2.5rem] text-[var(--main-color)] mt-8 mb-2" />
+        <RxHamburgerMenu className="cursor-pointer text-[2.5rem] text-[var(--main-color)] mt-8 mb-2" />
       </div>
     </nav>
   );
