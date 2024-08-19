@@ -4,7 +4,7 @@ import path from "path";
 
 export async function GET(req, res) {
   // process.cwd() is the root of the Next.js app
-  //   const { message } = req.query;
+
   const { searchParams } = new URL(req.url);
   const message = searchParams.get("message");
   try {
