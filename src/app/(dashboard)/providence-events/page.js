@@ -23,7 +23,9 @@ const page = () => {
   return (
     <Wrapper>
       <section className="min-h-screen text-[var(--main-color)] flex flex-col items-center">
-        <h1 className="text-[7rem] font-bold my-16">75-Day Prayer Condition</h1>
+        <h1 className="text-[7rem] font-bold my-16 text-center">
+          75-Day Prayer Condition
+        </h1>
 
         <ol className="text-[2rem]">
           {lists.map((list) => (
