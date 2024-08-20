@@ -38,8 +38,8 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className=" w-full shadow-sm py-5 hidden justify-center max-[832px]:flex ">
-      <div className="flex flex-col items-center">
+    <nav className=" z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-red-500 fixed top-0 flex-col ">
+      <div className="flex flex-col items-center ]">
         <form action={deleteCookies} className=" bg flex justify-end">
           <button
             type="submit"
@@ -50,6 +50,13 @@ const MobileNav = () => {
         </form>
         <RxHamburgerMenu className="cursor-pointer text-[2.5rem] text-[var(--main-color)] mt-8 mb-2" />
       </div>
+      {/* <div className="z-50 bg-orange-400 flex flex-col items-center min-h-screen ">
+        {links.map((link) => (
+          <Link key={link.id} href={link.href}>
+            {link.name}
+          </Link>
+        ))}
+      </div> */}
     </nav>
   );
 };

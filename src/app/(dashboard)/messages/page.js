@@ -49,7 +49,7 @@ const page = () => {
   };
   return (
     <Wrapper>
-      <section className="mt-28 text-[var(--main-color)]">
+      <section className="text-[var(--main-color)]">
         {messages.map((message, index) => {
           return (
             <div
