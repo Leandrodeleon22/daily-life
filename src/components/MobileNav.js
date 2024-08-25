@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import React from "react";
+import { useStore } from "@/utils/store";
 
 const MobileNav = () => {
   const links = [
@@ -37,8 +38,20 @@ const MobileNav = () => {
 
   const pathname = usePathname();
 
+  const { showMobileNav, toggleMobileNav } = useStore();
+
+  console.log(showMobileNav);
+
+  const handleClick = () => {
+    toggleMobileNav(!showMobileNav);
+  };
+
   return (
-    <nav className=" z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-red-500 fixed top-0 flex-col ">
+    <nav
+      className={` z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-red-500 flex-col ${
+        showMobileNav ? "fixed top-0" : ""
+      } `}
+    >
       <div className="flex flex-col items-center ]">
         <form action={deleteCookies} className=" bg flex justify-end">
           <button
@@ -48,15 +61,20 @@ const MobileNav = () => {
             Sign out
           </button>
         </form>
-        <RxHamburgerMenu className="cursor-pointer text-[2.5rem] text-[var(--main-color)] mt-8 mb-2" />
+        <RxHamburgerMenu
+          className="cursor-pointer text-[2.5rem] text-[var(--main-color)] mt-8 mb-2"
+          onClick={handleClick}
+        />
       </div>
-      {/* <div className="z-50 bg-orange-400 flex flex-col items-center min-h-screen ">
-        {links.map((link) => (
-          <Link key={link.id} href={link.href}>
-            {link.name}
-          </Link>
-        ))}
-      </div> */}
+      {showMobileNav ? (
+        <div className="z-50 bg-orange-400 flex flex-col items-center min-h-screen ">
+          {links.map((link) => (
+            <Link key={link.id} href={link.href}>
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      ) : null}
     </nav>
   );
 };
