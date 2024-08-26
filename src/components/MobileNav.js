@@ -4,7 +4,7 @@ import { deleteCookies } from "@/utils/actions";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
-import React from "react";
+import React, { useEffect } from "react";
 import { useStore } from "@/utils/store";
 
 const MobileNav = () => {
@@ -46,9 +46,21 @@ const MobileNav = () => {
     toggleMobileNav(!showMobileNav);
   };
 
+  useEffect(() => {
+    if (showMobileNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showMobileNav]);
+
   return (
     <nav
-      className={` z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-red-500 flex-col ${
+      className={` z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-slate-50 flex-col ${
         showMobileNav ? "fixed top-0" : ""
       } `}
     >
@@ -66,15 +78,23 @@ const MobileNav = () => {
           onClick={handleClick}
         />
       </div>
+
       {showMobileNav ? (
-        <div className="z-50 bg-orange-400 flex flex-col items-center min-h-screen ">
+        <div className=" bg-slate-100 flex flex-col items-center h-screen pt-[9rem] mt-5 text-[2rem] ]">
           {links.map((link) => (
-            <Link key={link.id} href={link.href}>
+            <Link
+              key={link.id}
+              href={link.href}
+              onClick={handleClick}
+              className="mb-[2rem]"
+            >
               {link.name}
             </Link>
           ))}
         </div>
-      ) : null}
+      ) : (
+        ""
+      )}
     </nav>
   );
 };
