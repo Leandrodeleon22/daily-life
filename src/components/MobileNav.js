@@ -43,7 +43,9 @@ const MobileNav = () => {
   console.log(showMobileNav);
 
   const handleClick = () => {
-    toggleMobileNav(!showMobileNav);
+    setTimeout(() => {
+      toggleMobileNav(!showMobileNav);
+    }, 500);
   };
 
   useEffect(() => {
