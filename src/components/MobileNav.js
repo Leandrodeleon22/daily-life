@@ -62,11 +62,11 @@ const MobileNav = () => {
 
   return (
     <nav
-      className={` z-0 w-full shadow-sm py-5 hidden justify-center max-[832px]:flex bg-slate-50 flex-col ${
+      className={`px-14  z-0 w-full shadow-sm py-5 hidden justify-between max-[832px]:flex bg-slate-50 flex-col ${
         showMobileNav ? "fixed top-0" : ""
       } `}
     >
-      <div className="flex flex-col items-center ]">
+      <div className="flex  items-center justify-between ]">
         <form action={deleteCookies} className=" bg flex justify-end">
           <button
             type="submit"
@@ -76,7 +76,7 @@ const MobileNav = () => {
           </button>
         </form>
         <RxHamburgerMenu
-          className="cursor-pointer text-[2.5rem] text-[var(--main-color)] mt-8 mb-2"
+          className="cursor-pointer text-[2.5rem] text-[var(--main-color)] "
           onClick={handleClick}
         />
       </div>
