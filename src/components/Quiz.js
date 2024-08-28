@@ -3,7 +3,7 @@ import React from "react";
 const Quiz = () => {
   return (
     <section className="flex items-center flex-col text-[var(--main-color)] ">
-      <h1 className="text-[7rem] font-bold my-[3rem] text-center max-[562px]:text-[4rem]">
+      <h1 className="text-[7rem] font-bold my-[3rem] text-center max-[562px]:text-[4rem] ">
         Quiz for the Week
       </h1>
       <p className="text-[2rem] text-center">

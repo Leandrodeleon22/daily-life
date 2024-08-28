@@ -5,7 +5,7 @@ const page = () => {
   return (
     <Wrapper>
       <section className="min-h-screen text-[var(--main-color)] flex flex-col items-center">
-        <h1 className="text-[7rem] font-bold my-16 text-center">
+        <h1 className="text-[7rem] font-bold my-16 text-center max-[488px]:text-[5rem]">
           Quiz for the Week
         </h1>
         <p className="text-[2rem] text-center w-4/5">
