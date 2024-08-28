@@ -62,7 +62,7 @@ const MobileNav = () => {
 
   return (
     <nav
-      className={`px-14  z-0 w-full shadow-sm py-5 hidden justify-between max-[832px]:flex bg-slate-50 flex-col ${
+      className={`px-14  z-0 w-full shadow-sm py-5 hidden justify-between max-[832px]:flex bg-slate-100 flex-col ${
         showMobileNav ? "fixed top-0" : ""
       } `}
     >

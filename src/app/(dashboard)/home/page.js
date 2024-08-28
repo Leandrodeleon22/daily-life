@@ -24,7 +24,10 @@ const page = () => {
           </p>
           {scriptures.map((scripture) => {
             return (
-              <p key={scripture.id} className="text-center italic text-[3rem]">
+              <p
+                key={scripture.id}
+                className="text-center italic text-[3rem] mt-8 max-[562px]:text-[2rem] "
+              >
                 {scripture.name.map((script) => (
                   <span className="block" key={script}>
                     {script}

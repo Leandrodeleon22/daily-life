@@ -8,7 +8,7 @@ const page = () => {
   const messages = [
     {
       id: 1,
-      name: "Sunday Messages",
+      name: "Sunday Message",
       date: "August 4, 2024",
       title: "God the Holy Spirit and the Lord All Appear when you Testify.",
       scriptures: ["Mt: 23:23"],
@@ -16,7 +16,7 @@ const page = () => {
     },
     {
       id: 2,
-      name: "Wednesday Messages",
+      name: "Wednesday Message",
       date: "August 7, 2024",
       title: "God the Holy Spirit and the Lord All Appear when you Testify.",
       scriptures: ["Mt: 24:23", "Mt: 25:23"],
@@ -49,25 +49,36 @@ const page = () => {
   };
   return (
     <Wrapper>
-      <section className="text-[var(--main-color)]">
+      <section className="text-[var(--main-color)] max-[560px]:flex max-[560px]:flex-col max-[560px]:items-center">
         {messages.map((message, index) => {
           return (
             <div
               key={message.id}
-              className={`w-3/4  ${
+              className={`w-3/4 max-[560px]:flex max-[560px]:flex-col max-[560px]:w-11/12 ${
                 messages.length - 1 !== index ? "border-b-[.25rem]" : ""
               }`}
             >
-              <h1 className="text-[7rem] font-bold mt-20">{message.name}</h1>
-              <span className="text-[2rem] italic">{message.date}</span>
-              <p className="text-[5rem]">{message.title}</p>
+              <h1 className="text-[7rem] font-bold mt-20 max-[560px]:text-center max-[560px]:text-[3rem]">
+                {message.name}
+              </h1>
+              <p className="text-[2rem] italic max-[560px]:text-center">
+                {message.date}
+              </p>
+              <p className="text-[5rem] my-9 max-[560px]:text-center max-[560px]:text-[3rem]">
+                {message.title}
+              </p>
               {message.scriptures.map((scripture) => (
-                <p key={scripture} className="text-[4rem]">
+                <p
+                  key={scripture}
+                  className="text-[4rem] max-[560px]:text-center max-[560px]:text-[2.5rem]"
+                >
                   {scripture}
                 </p>
               ))}
               <button
-                className=" min-w-[20.75rem] bg-[var(--main-color)] text-white text-[4rem] font-bold px-14 my-12"
+                className=" min-w-[20.75rem] bg-[var(--main-color)] text-white text-[4rem] font-bold px-14 my-12 max-[560px]:mx-auto
+                max-[560px]:text-[3rem]
+                "
                 onClick={() => handleDownload(message.file)}
               >
                 Download
