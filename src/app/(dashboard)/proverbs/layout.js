@@ -21,7 +21,7 @@ const layout = ({ children }) => {
     <Wrapper>
       <div
         className={
-          "flex justify-around text-[2rem] text-[var(--secondary-color)] my-16"
+          "flex justify-around text-[2rem] text-[var(--secondary-color)] my-16 border-b-2 pb-7 flex-wrap max-[724px]:grid max-[724px]:grid-cols-3 max-[724px]:gap-x-16 max-[560px]:grid-cols-2 "
         }
       >
         {week.map((day) => {
@@ -29,7 +29,7 @@ const layout = ({ children }) => {
             <Link
               key={day.id}
               href={day.link}
-              className={`px-4 hover:text-green-500 ${
+              className={`px-4 text-center hover:text-green-500 ${
                 day.link === pathname ? "activeLink hover:text-white" : ""
               }`}
             >
