@@ -1,7 +1,8 @@
 "use server";
 
 import jwt from "jsonwebtoken";
-import { revalidatePath } from "next/cache";
+import { jwtVerify } from "jose";
+
 import { cookies } from "next/headers";
 
 import { redirect } from "next/navigation";
@@ -12,14 +13,17 @@ export async function inputPassword(formData) {
 
   const payload = { password };
   const token = jwt.sign(payload, secretKey, { expiresIn: "4h" });
+  console.log(token);
   // const token = null;
+
   if (password === process.env.PASSWORD && token) {
     // console.log(token);
     cookies().set("user", token);
     redirect("/home");
   }
+
   return;
-  redirect("/");
+  // redirect("/");
 
   //   console.log(formdata);
 }
