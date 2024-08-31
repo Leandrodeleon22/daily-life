@@ -1,7 +1,6 @@
 "use server";
 
 import jwt from "jsonwebtoken";
-import { jwtVerify } from "jose";
 
 import { cookies } from "next/headers";
 
@@ -13,7 +12,7 @@ export async function inputPassword(formData) {
 
   const payload = { password };
   const token = jwt.sign(payload, secretKey, { expiresIn: "4h" });
-  console.log(token);
+
   // const token = null;
 
   if (password === process.env.PASSWORD && token) {

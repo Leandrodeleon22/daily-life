@@ -2,7 +2,7 @@
 
 import { deleteCookies } from "@/utils/actions";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import React, { useEffect } from "react";
 import { useStore } from "@/utils/store";
@@ -36,11 +36,7 @@ const MobileNav = () => {
     },
   ];
 
-  const pathname = usePathname();
-
   const { showMobileNav, toggleMobileNav } = useStore();
-
-  console.log(showMobileNav);
 
   const handleClick = () => {
     setTimeout(() => {
