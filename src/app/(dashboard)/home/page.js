@@ -9,7 +9,16 @@ const page = () => {
   const scriptures = [
     {
       id: 1,
-      name: ["Mt 23:23", "Mt 24:23"],
+      name: [
+        "1 Corinthians 6:19",
+        "Habakuk 2:20",
+        "Psalms 99:1-9",
+        "John 2:21>",
+        "1 Corinthians 3:16",
+        "2 Corinthians 6:16",
+        "Revelation 21:2",
+        "Revelation 21:22>",
+      ],
     },
   ];
   return (
@@ -20,13 +29,16 @@ const page = () => {
             Sunday Message Title
           </h1>
           <p className="text-[4.5rem] text-center max-[832px]:text-[4rem] w-5/6 max-[562px]:text-[3rem]">
-            God the Holy Spirit and the Lord All Appear when you Testify.
+            God works appearing through ‘the temple that symbolizes God.
           </p>
+
           {scriptures.map((scripture) => {
             return (
               <p
                 key={scripture.id}
-                className="text-center italic text-[3rem] mt-8 max-[562px]:text-[2rem] "
+                className={`text-center italic text-[3rem]  mt-8 max-[562px]:text-[2rem] ${
+                  scripture.name.length > 4 ? "grid grid-cols-2 gap-x-16" : ""
+                }`}
               >
                 {scripture.name.map((script) => (
                   <span className="block" key={script}>
