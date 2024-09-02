@@ -14,7 +14,7 @@ const page = () => {
     },
   ];
 
-  const author = ["TR: GCJ", "ENPE: Joyce W. & Vince S"];
+  const author = ["TR: GCJ", "ENPE: Vince S"];
 
   const mondayMessage = [
     {
