@@ -4,18 +4,19 @@ const PrayerCondition = () => {
   const prayerTitles = [
     {
       id: 1,
-      title:
-        "and scrambled it to make a type specimen book. It has survived not only five centuries,but also the leap into electronic ",
+      title: "For Providence and SSN",
     },
     {
       id: 2,
-      title:
-        "and scrambled it to make a type specimen book. It has survived not only five centuries,but also the leap into electronic ",
+      title: "For a fair trial ",
     },
     {
       id: 3,
-      title:
-        "and scrambled it to make a type specimen book. It has survived not only five centuries,but also the leap into electronic ",
+      title: "For unity and harmony within Providence",
+    },
+    {
+      id: 4,
+      title: " For lives to be further strengthened amidst the trials.",
     },
   ];
 
@@ -46,7 +47,7 @@ const PrayerCondition = () => {
         3. <strong>Prayer Topics:</strong>
       </p>
 
-      <ol className="text-[2rem]">
+      <ol className="text-[2rem] ml-40 mr-[5rem] w-full">
         {prayerTitles.map((list) => {
           return <li key={list.id}>{`${list.id}. ${list.title}`}</li>;
         })}
