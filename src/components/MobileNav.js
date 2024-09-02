@@ -58,8 +58,8 @@ const MobileNav = () => {
 
   return (
     <nav
-      className={`px-14  z-0 w-full shadow-sm py-5 hidden justify-between max-[832px]:flex bg-slate-100 flex-col ${
-        showMobileNav ? "fixed top-0" : ""
+      className={`px-14  z-0 w-full shadow-sm py-5  hidden justify-between max-[832px]:flex bg-slate-100 flex-col ${
+        showMobileNav ? "fixed top-0 min-h-screen" : ""
       } `}
     >
       <div className="flex  items-center justify-between ]">
@@ -67,6 +67,7 @@ const MobileNav = () => {
           <button
             type="submit"
             className="hover:text-green-500 text-[1.5rem] text-green-700"
+            onClick={handleClick}
           >
             Sign out
           </button>

@@ -1,6 +1,7 @@
 "use server";
 
 import jwt from "jsonwebtoken";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 import { cookies } from "next/headers";
 
@@ -29,5 +30,7 @@ export async function inputPassword(formData) {
 
 export async function deleteCookies() {
   cookies().delete("user");
+  revalidateTag("/home");
+  // revalidate("/home");
   redirect("/");
 }

@@ -6,6 +6,9 @@ const Proverbs = ({ message, title, author }) => {
       <div className="mb-16">
         <h1>{title[0].korean}</h1>
         <h1>{title[1].english}</h1>
+        <br />
+        <h1>{title[2].subtitleKorean}</h1>
+        <h1>{title[3].subtitleEnglish}</h1>
       </div>
 
       <ol>
