@@ -37,7 +37,7 @@ const page = () => {
               <p
                 key={scripture.id}
                 className={`text-center italic text-[3rem]  mt-8 max-[562px]:text-[2rem] ${
-                  scripture.name.length > 4 ? "grid grid-cols-2 gap-x-16" : ""
+                  scripture.name.length > 4 ? "grid grid-cols-2 gap-x-14 " : ""
                 }`}
               >
                 {scripture.name.map((script) => (
