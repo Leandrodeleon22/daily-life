@@ -29,7 +29,7 @@ const page = () => {
             Sunday Message Title
           </h1>
           <p className="text-[4.5rem] text-center max-[832px]:text-[4rem] w-5/6 max-[562px]:text-[3rem]">
-            God works appearing through ‘the temple that symbolizes God.
+            God works appearing through the temple that symbolizes God.
           </p>
 
           {scriptures.map((scripture) => {

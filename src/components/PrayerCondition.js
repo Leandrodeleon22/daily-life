@@ -29,8 +29,8 @@ const PrayerCondition = () => {
         The decision in the second trial has been extended by one more week. We
         recognize that God works more powerfully at the end. During this
         critical time, we ask all Providence members to unite in heart and
-        participate in the "The End is Strong!! Special Prayer" for Providence
-        and SSN.
+        participate in the &quot;The End is Strong!! Special Prayer&quot; for
+        Providence and SSN.
       </p>
       <p className="text-[2rem] text-left w-full">
         1. <strong>Duration</strong> 9days

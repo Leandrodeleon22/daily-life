@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const week = [
     { id: 1, name: "Monday", link: "/proverbs" },
     { id: 2, name: "Tuesday", link: "/proverbs/tuesday" },
@@ -44,4 +44,4 @@ const layout = ({ children }) => {
   );
 };
 
-export default layout;
+export default Layout;
