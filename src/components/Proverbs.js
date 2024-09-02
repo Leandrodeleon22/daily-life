@@ -17,8 +17,11 @@ const Proverbs = ({ message, title, author }) => {
         ))}
       </ol>
       <div>
-        <p>{author[0]}</p>
-        <p>{author[1]}</p>
+        {author.map((text) => {
+          return <p key={text}>{text}</p>;
+        })}
+        {/* <p>{author[0]}</p>
+        <p>{author[1]}</p> */}
       </div>
     </section>
   );
